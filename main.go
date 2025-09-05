@@ -24,7 +24,7 @@ func handleGetSnippetByID(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	mux := http.NewServeMux()
-	mux.HandleFunc("/{$}", home)
+	mux.HandleFunc("GET /{$}", home)
 	mux.HandleFunc("GET /snippets/{id}", handleGetSnippetByID)
 
 	log.Print("Starting server on :4000")
