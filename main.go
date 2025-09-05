@@ -11,6 +11,12 @@ func home(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("Hello from Snippetbox"))
 }
 
+func handlePostSnippets(w http.ResponseWriter, r *http.Request) {
+	w.WriteHeader(http.StatusCreated)
+
+	w.Write([]byte("Creating and saving a new snippet…"))
+}
+
 func handleGetSnippetByID(w http.ResponseWriter, r *http.Request) {
 	id, err := strconv.Atoi(r.PathValue("id"))
 
@@ -25,6 +31,7 @@ func handleGetSnippetByID(w http.ResponseWriter, r *http.Request) {
 func main() {
 	mux := http.NewServeMux()
 	mux.HandleFunc("GET /{$}", home)
+	mux.HandleFunc("POST /snippets", handlePostSnippets)
 	mux.HandleFunc("GET /snippets/{id}", handleGetSnippetByID)
 
 	log.Print("Starting server on :4000")
