@@ -11,7 +11,7 @@ func home(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	mux := http.NewServeMux()
-	mux.HandleFunc("/", home)
+	mux.HandleFunc("/{$}", home)
 
 	log.Print("Starting server on :4000")
 
