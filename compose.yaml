@@ -9,6 +9,7 @@ services:
       - db-password
       - app-user
       - app-password
+      - app-db-name
     volumes:
       - type: bind
         source: ./init.sql
@@ -19,6 +20,7 @@ services:
       - POSTGRES_PASSWORD_FILE=/run/secrets/db-password
       - APP_USER=/run/secrets/app-user
       - APP_PASSWORD=/run/secrets/app-password
+      - APP_DB_NAME=/run/secrets/app-db-name
     command: ["postgres", "-N", "1000"]
     ports:
       - 5432:5432
@@ -43,3 +45,5 @@ secrets:
     file: secrets/app_user.txt
   app-password:
     file: secrets/app_password.txt
+  app-db-name:
+    file: secrets/app_db_name.txt

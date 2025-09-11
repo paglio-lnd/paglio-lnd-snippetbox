@@ -1,6 +1,8 @@
-CREATE DATABASE snippetbox;
+\set app_db_name `cat $APP_DB_NAME`
 
-\c snippetbox
+CREATE DATABASE :app_db_name;
+
+\c :app_db_name
 
 CREATE TABLE snippets (
   id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,

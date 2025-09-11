@@ -76,6 +76,8 @@ tasks:
       - task: sops:create-secret-file
         vars:
           { SECRET_VAR_NAME: "APP_PASSWORD", SECRET_FILE: "app_password.txt" }
+      - task: sops:create-secret-file
+        vars: { SECRET_VAR_NAME: "APP_DB_NAME", SECRET_FILE: "app_db_name.txt" }
 
   db:start:
     desc: Starts postgres with secrets
