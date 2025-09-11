@@ -43,6 +43,6 @@ CREATE TABLE users (
 \set app_user `cat $APP_USER`
 \set app_password `cat $APP_PASSWORD`
 
-CREATE USER :app_user WITH PASSWORD 'app_password';
+CREATE USER :app_user WITH PASSWORD :'app_password';
 GRANT pg_read_all_data TO :app_user;
 GRANT pg_write_all_data TO :app_user;
