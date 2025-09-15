@@ -29,19 +29,13 @@ func main() {
 		os.Exit(1)
 	}
 
-	dbPool, err := pgxpool.New(context.Background(), connStr)
+	dbPool, err := createDBPool(connStr)
 	if err != nil {
-		logger.Error("unable to connect to database", "err", err)
+		logger.Error(err.Error())
 		os.Exit(1)
 	}
 	defer dbPool.Close()
 
-	var greeting string
-	err = dbPool.QueryRow(context.Background(), "SELECT 'Hello, Sir.'").Scan(&greeting)
-	if err != nil {
-		logger.Error("QueryRow failed", "err", err)
-		os.Exit(1)
-	}
 	logger.Info("connection pool established")
 
 	app := &application{
@@ -79,4 +73,20 @@ func getPostgresConnectionString(secretsDir string) (string, error) {
 	)
 
 	return connStr, nil
+}
+
+func createDBPool(connStr string) (*pgxpool.Pool, error) {
+	dbPool, err := pgxpool.New(context.Background(), connStr)
+	if err != nil {
+		return nil, err
+	}
+
+	var greeting string
+	err = dbPool.QueryRow(context.Background(), "SELECT 'Hello, Sir.'").Scan(&greeting)
+	if err != nil {
+		dbPool.Close()
+		return nil, err
+	}
+
+	return dbPool, nil
 }
