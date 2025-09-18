@@ -65,7 +65,7 @@ func getPostgresConnectionString(secretsDir string) (string, error) {
 		return "", fmt.Errorf("failed to read db_password: %w", err)
 	}
 
-	dbName, err := os.ReadFile(filepath.Join(secretsDir, "db_name.txt"))
+	dbName, err := os.ReadFile(filepath.Join(secretsDir, "app_db_name.txt"))
 	if err != nil {
 		return "", fmt.Errorf("failed to read db_name: %w", err)
 	}
