@@ -11,10 +11,12 @@ import (
 	"strings"
 
 	"github.com/jackc/pgx/v5/pgxpool"
+	"snippetbox.paglio.dev/internal/models"
 )
 
 type application struct {
-	logger *slog.Logger
+	logger   *slog.Logger
+	snippets *models.SnippetModel
 }
 
 func main() {
@@ -40,6 +42,9 @@ func main() {
 
 	app := &application{
 		logger: logger,
+		snippets: &models.SnippetModel{
+			DB: dbPool,
+		},
 	}
 
 	logger.Info("starting server", "address", *addr)
