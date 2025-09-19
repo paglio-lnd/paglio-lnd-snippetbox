@@ -1,0 +1,8 @@
+version: "3"
+
+output: prefixed
+
+tasks:
+  dev:
+    desc: "Runs dev server for SvelteKit frontend"
+    cmd: pnpm dev
