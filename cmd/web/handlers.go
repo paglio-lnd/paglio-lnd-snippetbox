@@ -1,9 +1,12 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 	"net/http"
 	"strconv"
+
+	"snippetbox.paglio.dev/internal/models"
 )
 
 func (app *application) home(w http.ResponseWriter, r *http.Request) {
@@ -34,5 +37,15 @@ func (app *application) handleGetSnippetByID(w http.ResponseWriter, r *http.Requ
 		return
 	}
 
-	fmt.Fprintf(w, "Here is your snippet with ID %d", id)
+	snippet, err := app.snippets.Get(id)
+	if err != nil {
+		if errors.Is(err, models.ErrNoRecord) {
+			http.NotFound(w, r)
+		} else {
+			app.serverError(w, r, err)
+		}
+		return
+	}
+
+	fmt.Fprintf(w, "Here is your snippet with ID %d: %+v", id, snippet)
 }
