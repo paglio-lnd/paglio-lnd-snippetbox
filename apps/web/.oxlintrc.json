@@ -1,0 +1,20 @@
+{
+	"$schema": "./node_modules/oxlint/configuration_schema.json",
+	"plugins": ["oxc", "typescript", "unicorn"],
+	"categories": {
+		"correctness": "error",
+		"perf": "warn",
+		"restriction": "warn",
+		"suspicious": "warn",
+		"pedantic": "warn",
+		"style": "warn"
+	},
+	"env": {
+		"builtin": true,
+		"browser": true,
+		"commonjs": true,
+		"node": true,
+		"shared-node-browser": true
+	},
+	"ignorePatterns": ["**/node_modules", ".svelte-kit", "build"]
+}
