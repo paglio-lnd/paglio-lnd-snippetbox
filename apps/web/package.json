@@ -11,7 +11,7 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"format": "prettier --write --experimental-cli .",
-		"lint": "prettier --check --experimental-cli . && oxlint .",
+		"lint": "prettier --check --experimental-cli . && oxlint --type-aware .",
 		"up:deps": "pnpm update -i --latest",
 		"preinstall": "npx only-allow pnpm"
 	},
