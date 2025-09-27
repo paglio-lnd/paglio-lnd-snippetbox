@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"errors"
 	"fmt"
 	"net/http"
@@ -18,9 +19,14 @@ func (app *application) home(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	for _, snippet := range snippets {
-		fmt.Fprintf(w, "%+v\n", snippet)
+	json, err := json.Marshal(snippets)
+	if err != nil {
+		app.serverError(w, r, err)
+		return
 	}
+
+	w.Header().Set("Content-Type", "application/json")
+	w.Write(json)
 }
 
 func (app *application) handlePostSnippets(w http.ResponseWriter, r *http.Request) {

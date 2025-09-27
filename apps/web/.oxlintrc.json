@@ -16,5 +16,18 @@
 		"node": true,
 		"shared-node-browser": true
 	},
-	"ignorePatterns": ["**/node_modules", ".svelte-kit", "build"]
+	"ignorePatterns": ["**/node_modules", ".svelte-kit", "build"],
+	"overrides": [
+		{
+			"files": ["**/*.server.ts"],
+			"rules": {
+				"oxc/no-async-await": "off"
+			}
+		}
+	],
+	"rules": {
+		"eslint/id-length": "off",
+		"eslint/func-names": ["error", "as-needed"],
+		"unicorn/no-object-as-default-parameter": "off"
+	}
 }
