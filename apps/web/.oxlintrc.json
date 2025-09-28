@@ -28,7 +28,7 @@
 	"rules": {
 		"eslint/id-length": "off",
 		"eslint/func-names": ["error", "as-needed"],
-		"eslint/func-style": ["error", "declaration"],
+		"eslint/func-style": ["error", "declaration", { "allowArrowFunctions": true }],
 		"eslint/no-ternary": "off",
 		"unicorn/no-object-as-default-parameter": "off"
 	}
