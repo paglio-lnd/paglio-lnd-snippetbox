@@ -3,11 +3,11 @@
 	"plugins": ["oxc", "typescript", "unicorn"],
 	"categories": {
 		"correctness": "error",
-		"perf": "warn",
-		"restriction": "warn",
-		"suspicious": "warn",
-		"pedantic": "warn",
-		"style": "warn"
+		"perf": "error",
+		"restriction": "error",
+		"suspicious": "error",
+		"pedantic": "error",
+		"style": "error"
 	},
 	"env": {
 		"builtin": true,
@@ -28,6 +28,8 @@
 	"rules": {
 		"eslint/id-length": "off",
 		"eslint/func-names": ["error", "as-needed"],
+		"eslint/func-style": ["error", "declaration"],
+		"eslint/no-ternary": "off",
 		"unicorn/no-object-as-default-parameter": "off"
 	}
 }
