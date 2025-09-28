@@ -26,3 +26,9 @@
 		</li>
 	{/each}
 </ul>
+
+<style>
+	h2 {
+		color: var(--text-accent);
+	}
+</style>

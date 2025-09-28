@@ -1,0 +1,46 @@
+@layer theme {
+	:root {
+		color-scheme: light dark;
+
+		/* Generated with: https://tints.dev/ */
+		--color-primary-50: oklch(0.926 0.033 10.95);
+		--color-primary-100: oklch(0.854 0.07 11.98);
+		--color-primary-200: oklch(0.703 0.168 14);
+		--color-primary-300: oklch(0.551 0.199 15.71);
+		--color-primary-400: oklch(0.388 0.14 15.8);
+		--color-primary-500: oklch(0.223 0.08 15.75); /* #38040E */
+		--color-primary-600: oklch(0.207 0.075 15.03);
+		--color-primary-700: oklch(0.185 0.068 16.1);
+		--color-primary-800: oklch(0.155 0.058 15);
+		--color-primary-900: oklch(0.137 0.049 17.42);
+		--color-primary-950: oklch(0.105 0.042 9.93);
+
+		--color-secondary-50: oklch(0.93 0.034 252.25);
+		--color-secondary-100: oklch(0.86 0.072 248.05);
+		--color-secondary-200: oklch(0.71 0.158 238.33);
+		--color-secondary-300: oklch(0.573 0.128 238.62);
+		--color-secondary-400: oklch(0.437 0.098 238.38);
+		--color-secondary-500: oklch(0.294 0.066 238.46); /* #003049 */
+		--color-secondary-600: oklch(0.267 0.059 238.25);
+		--color-secondary-700: oklch(0.231 0.051 237.66);
+		--color-secondary-800: oklch(0.195 0.045 240.3);
+		--color-secondary-900: oklch(0.164 0.037 238.24);
+		--color-secondary-950: oklch(0.128 0.029 239.37);
+
+		--color-surface-50: oklch(100% 0 0);
+		--color-surface-100: oklch(99.13% 0.001 287.33);
+		--color-surface-200: oklch(99.13% 0.001 287.33);
+		--color-surface-300: oklch(98.27% 0.003 286.82);
+		--color-surface-400: oklch(98.27% 0.003 286.82);
+		--color-surface-500: oklch(97.67% 0.003 286.81); /* #F7F7F9 */
+		--color-surface-600: oklch(81.27% 0.022 285.94);
+		--color-surface-700: oklch(64.1% 0.046 285.04);
+		--color-surface-800: oklch(47.67% 0.062 283.79);
+		--color-surface-900: oklch(30.57% 0.046 283.31);
+		--color-surface-950: oklch(22.72% 0.035 283.3);
+
+		--text-main: light-dark(var(--color-primary-500), var(--color-surface-500));
+		--text-accent: light-dark(var(--color-secondary-500), var(--color-secondary-100));
+		--background-main: light-dark(var(--color-surface-500), var(--color-primary-500));
+	}
+}

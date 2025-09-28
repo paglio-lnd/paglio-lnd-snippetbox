@@ -1,1 +1,15 @@
 @import "./reset.css";
+@import "./variables/color.css";
+
+@layer base {
+	@media (prefers-reduced-motion: no-preference) {
+		html {
+			scroll-behavior: smooth;
+		}
+	}
+
+	body {
+		background-color: var(--background-main);
+		color: var(--text-main);
+	}
+}
