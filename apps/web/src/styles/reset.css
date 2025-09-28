@@ -1,0 +1,58 @@
+/*
+* inspired by:
+* - https://www.joshwcomeau.com/css/custom-css-reset/
+* - https://kilianvalkhof.com/2022/css-html/your-css-reset-needs-text-size-adjust-probably/
+* - https://github.com/tailwindlabs/tailwindcss/blob/main/packages/tailwindcss/preflight.css
+* - https://piccalil.li/blog/a-more-modern-css-reset/
+*/
+
+@layer reset {
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box;
+	}
+
+	* {
+		margin: 0;
+	}
+
+	html {
+		-moz-text-size-adjust: none;
+		-webkit-text-size-adjust: none;
+		text-size-adjust: none;
+	}
+
+	body {
+		min-block-size: 100vh;
+		line-height: 1.5;
+	}
+
+	:where(img, picture, video, canvas, svg) {
+		display: block;
+		max-inline-size: 100%;
+	}
+
+	:where(input, button, textarea, select) {
+		font: inherit;
+	}
+
+	:where(a) {
+		text-decoration: inherit;
+		color: inherit;
+	}
+
+	:where(p, h1, h2, h3) {
+		overflow-wrap: break-word;
+		hyphens: auto;
+	}
+
+	:where(p, li) {
+		text-wrap: pretty;
+	}
+
+	:where(h1, h2, h3) {
+		text-wrap: balance;
+		line-height: 1.1;
+	}
+}
