@@ -10,8 +10,8 @@
 		"prepare": "svelte-kit sync || echo ''",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"format": "prettier . --write --experimental-cli --cache-location=.prettiercache",
-		"lint": "prettier . --check --experimental-cli --cache-location=.prettiercache && oxlint --type-aware .",
+		"format": "prettier . --write --experimental-cli --cache --cache-location=.prettiercache",
+		"lint": "prettier . --check --experimental-cli --cache --cache-location=.prettiercache && oxlint --type-aware .",
 		"up:deps": "pnpm update -i --latest",
 		"preinstall": "npx only-allow pnpm"
 	},
