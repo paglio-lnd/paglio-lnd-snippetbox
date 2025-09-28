@@ -18,8 +18,8 @@
 					<a href={`/snippets/${snippet.id}`}>To the snippet</a>
 					<aside>
 						<span>{snippet.id}</span>
-						<time>{formatDate(snippet.created_at, {})}</time>
-						<time>{formatDate(snippet.expires_at, {})}</time>
+						<time>{formatDate(snippet.created_at)}</time>
+						<time>{formatDate(snippet.expires_at)}</time>
 					</aside>
 				</footer>
 			</article>
