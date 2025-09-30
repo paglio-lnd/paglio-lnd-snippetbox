@@ -19,7 +19,7 @@
 	"ignorePatterns": ["**/node_modules", ".svelte-kit", "build"],
 	"overrides": [
 		{
-			"files": ["**/*.server.ts"],
+			"files": ["**/*.server.ts", "**/*.svelte"],
 			"rules": {
 				"oxc/no-async-await": "off"
 			}
@@ -30,6 +30,7 @@
 		"eslint/func-names": ["error", "as-needed"],
 		"eslint/func-style": ["error", "declaration", { "allowArrowFunctions": true }],
 		"eslint/no-ternary": "off",
+		"eslint/prefer-destructuring": "off",
 		"unicorn/no-object-as-default-parameter": "off"
 	}
 }

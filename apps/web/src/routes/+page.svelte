@@ -3,19 +3,20 @@
 	const { data } = $props();
 </script>
 
-<h1>Welcome to SvelteKit</h1>
 <p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+
+<h1>Your Snippets</h1>
 
 <ul>
 	{#each data.snippets as snippet (snippet.id)}
 		<li>
 			<article>
 				<header>
-					<h2>{snippet.title}</h2>
+					<h2 style="view-transition-name: snippet-{snippet.id}-headline;">{snippet.title}</h2>
 				</header>
 
 				<footer>
-					<a href={`/snippets/${snippet.id}`}>To the snippet</a>
+					<a href={`/${snippet.id}`}>To the snippet</a>
 					<aside>
 						<span>{snippet.id}</span>
 						<time>{formatDate(snippet.created_at)}</time>
@@ -26,9 +27,3 @@
 		</li>
 	{/each}
 </ul>
-
-<style>
-	h2 {
-		color: var(--text-accent);
-	}
-</style>

@@ -3,6 +3,9 @@
 
 @layer base {
 	@media (prefers-reduced-motion: no-preference) {
+		@view-transition {
+			navigation: auto;
+		}
 		html {
 			scroll-behavior: smooth;
 		}

@@ -61,5 +61,12 @@ func (app *application) handleGetSnippetByID(w http.ResponseWriter, r *http.Requ
 		return
 	}
 
-	fmt.Fprintf(w, "Here is your snippet with ID %d: %+v", id, snippet)
+	json, err := json.Marshal(snippet)
+	if err != nil {
+		app.serverError(w, r, err)
+		return
+	}
+
+	w.Header().Set("Content-Type", "application/json")
+	w.Write(json)
 }
