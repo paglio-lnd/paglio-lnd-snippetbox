@@ -1,5 +1,6 @@
 <script lang="ts">
 	import "../styles/base.css";
+	import "virtual:uno.css";
 	import favicon from "$lib/assets/favicon.svg";
 	import { onNavigate } from "$app/navigation";
 

@@ -58,4 +58,8 @@
 			outline-offset: 4px;
 		}
 	}
+
+	[class^="i-lucide-"] {
+		display: block;
+	}
 }
