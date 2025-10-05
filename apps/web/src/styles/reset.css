@@ -18,6 +18,7 @@
 	}
 
 	html {
+		line-height: 1.5;
 		-moz-text-size-adjust: none;
 		-webkit-text-size-adjust: none;
 		text-size-adjust: none;
@@ -25,7 +26,6 @@
 
 	body {
 		min-block-size: 100vh;
-		line-height: 1.5;
 	}
 
 	:where(img, picture, video, canvas, svg) {
