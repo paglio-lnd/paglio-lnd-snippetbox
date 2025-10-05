@@ -17,19 +17,19 @@
 	},
 	"devDependencies": {
 		"@prettier/plugin-oxc": "^0.0.4",
-		"@sveltejs/adapter-auto": "^6.0.0",
-		"@sveltejs/kit": "^2.43.5",
+		"@sveltejs/adapter-auto": "^6.1.1",
+		"@sveltejs/kit": "^2.43.8",
 		"@sveltejs/vite-plugin-svelte": "^6.2.1",
-		"@types/node": "^22",
+		"@types/node": "^24.6.2",
 		"globals": "^16.0.0",
 		"oxlint": "^1.19.0",
 		"oxlint-tsgolint": "^0.2.0",
 		"prettier": "^3.4.2",
 		"prettier-plugin-svelte": "^3.3.3",
-		"svelte": "^5.39.6",
+		"svelte": "^5.39.8",
 		"svelte-check": "^4.3.2",
-		"typescript": "^5.9.2",
-		"vite": "^7.1.7"
+		"typescript": "^5.9.3",
+		"vite": "^7.1.9"
 	},
 	"engines": {
 		"node": "22.20.0"
