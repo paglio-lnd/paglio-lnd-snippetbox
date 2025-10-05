@@ -1,6 +1,7 @@
 @import "./reset.css";
 @import "./variables/color.css";
 @import "./variables/spacing.css";
+@import "./variables/easing.css";
 
 @layer base {
 	@media (prefers-reduced-motion: no-preference) {
@@ -43,5 +44,17 @@
 
 	:where(h1) {
 		font-size: var(--font-size-heading-xl);
+	}
+
+	:where(a, button, summary, input) {
+		--_base-focus-outline-color: var(--text-accent);
+		outline-offset: 0;
+		transition: outline-offset var(--ease-2) 200ms;
+		&:focus-visible {
+			outline-style: solid;
+			outline-width: 2px;
+			outline-color: var(--_base-focus-outline-color);
+			outline-offset: 4px;
+		}
 	}
 }
