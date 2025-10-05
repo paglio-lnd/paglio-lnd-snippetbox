@@ -1,5 +1,6 @@
 @import "./reset.css";
 @import "./variables/color.css";
+@import "./variables/spacing.css";
 
 @layer base {
 	@media (prefers-reduced-motion: no-preference) {
@@ -12,7 +13,16 @@
 	}
 
 	body {
+		display: grid;
+		grid-template-rows: auto 1fr auto;
+		row-gap: var(--spacing-2xl-3xl);
+
+		font-size: var(--font-size-step-base);
 		background-color: var(--background-main);
 		color: var(--text-main);
+	}
+
+	:where(h1) {
+		font-size: var(--font-size-heading-xl);
 	}
 }
