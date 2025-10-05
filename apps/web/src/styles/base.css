@@ -12,6 +12,25 @@
 		}
 	}
 
+	@supports (scrollbar-color: auto) {
+		html {
+			scrollbar-color: oklch(from var(--background-main) calc(l + 0.5) c h) var(--background-main);
+			scrollbar-width: thin;
+		}
+	}
+
+	@supports selector(::-webkit-scrollbar) {
+		html::-webkit-scrollbar {
+			inline-size: 0.25rem;
+			background-color: var(--background-main);
+		}
+
+		html::-webkit-scrollbar-thumb {
+			background-color: oklch(from var(--background-main) calc(l + 0.5) c h);
+			border-radius: calc(infinity * 1px);
+		}
+	}
+
 	body {
 		display: grid;
 		grid-template-rows: auto 1fr auto;
