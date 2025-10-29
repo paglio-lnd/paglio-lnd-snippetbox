@@ -1,9 +1,3 @@
-@import "./reset.css";
-@import "./variables/color.css";
-@import "./variables/spacing.css";
-@import "./variables/easing.css";
-@import "./utilities.css";
-
 @layer base {
 	@media (prefers-reduced-motion: no-preference) {
 		@view-transition {

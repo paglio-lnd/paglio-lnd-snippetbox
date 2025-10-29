@@ -1,13 +1,10 @@
 {
 	"$schema": "./node_modules/oxlint/configuration_schema.json",
-	"plugins": ["oxc", "typescript", "unicorn"],
+	"plugins": ["oxc", "typescript", "unicorn", "import"],
 	"categories": {
 		"correctness": "error",
 		"perf": "error",
-		"restriction": "error",
-		"suspicious": "error",
-		"pedantic": "error",
-		"style": "error"
+		"suspicious": "error"
 	},
 	"env": {
 		"builtin": true,
@@ -16,22 +13,28 @@
 		"node": true,
 		"shared-node-browser": true
 	},
-	"ignorePatterns": ["**/node_modules", ".svelte-kit", "build"],
+	"ignorePatterns": ["**/node_modules", ".svelte-kit"],
 	"overrides": [
 		{
-			"files": ["**/*.server.ts", "**/*.svelte"],
+			"files": ["src/app.d.ts"],
 			"rules": {
-				"oxc/no-async-await": "off"
+				"unicorn/require-module-specifiers": "off"
 			}
 		}
 	],
 	"rules": {
-		"eslint/id-length": "off",
-		"eslint/func-names": ["error", "as-needed"],
-		"eslint/func-style": ["error", "declaration", { "allowArrowFunctions": true }],
-		"eslint/no-ternary": "off",
-		"eslint/prefer-destructuring": "off",
-		"unicorn/no-object-as-default-parameter": "off",
-		"typescript/consistent-indexed-object-style": ["error", "index-signature"]
+		"eslint/arrow-body-style": ["error", "as-needed", { "requireReturnForObjectLiteral": true }],
+		"eslint/no-magic-numbers": "error",
+		"import/no-cycle": "error",
+		"import/no-unassigned-import": ["error", { "allow": ["../styles/app.css", "virtual:uno.css"] }],
+		"typescript/consistent-type-imports": "off",
+		"typescript/no-floating-promises": [
+			"error",
+			{
+				"allowForKnownSafeCalls": [
+					{ "from": "package", "name": "computePosition", "package": "@floating-ui/dom" }
+				]
+			}
+		]
 	}
 }
