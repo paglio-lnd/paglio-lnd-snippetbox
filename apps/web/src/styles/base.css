@@ -34,7 +34,7 @@
 
 		font-size: var(--font-size-step-base);
 		background-color: var(--background-main);
-		color: var(--text-main);
+		color: var(--text-base-on-main);
 	}
 
 	:where(h1) {
@@ -42,7 +42,7 @@
 	}
 
 	:where(a, button, summary, input) {
-		--_base-focus-outline-color: var(--text-accent);
+		--_base-focus-outline-color: var(--text-accent-on-main);
 		outline-offset: 0;
 		transition: outline-offset var(--ease-2) 200ms;
 		&:focus-visible {

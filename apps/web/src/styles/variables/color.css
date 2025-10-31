@@ -39,8 +39,8 @@
 		--color-surface-900: oklch(30.57% 0.046 283.31);
 		--color-surface-950: oklch(22.72% 0.035 283.3);
 
-		--text-main: light-dark(var(--color-primary-500), var(--color-surface-500));
-		--text-accent: light-dark(var(--color-secondary-500), var(--color-secondary-100));
+		--text-base-on-main: light-dark(var(--color-primary-500), var(--color-surface-500));
+		--text-accent-on-main: light-dark(var(--color-secondary-500), var(--color-secondary-100));
 		--background-main: light-dark(var(--color-surface-500), var(--color-primary-500));
 	}
 }
