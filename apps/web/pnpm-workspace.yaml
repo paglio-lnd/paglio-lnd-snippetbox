@@ -1,3 +1,6 @@
 engineStrict: true
 minimumReleaseAge: 1440
 trustPolicy: no-downgrade
+
+onlyBuiltDependencies:
+  - esbuild

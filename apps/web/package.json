@@ -37,11 +37,6 @@
 		"node": "24.11.1"
 	},
 	"packageManager": "pnpm@10.25.0",
-	"pnpm": {
-		"onlyBuiltDependencies": [
-			"esbuild"
-		]
-	},
 	"dependencies": {
 		"ky": "^1.14.1",
 		"valibot": "^1.2.0"
