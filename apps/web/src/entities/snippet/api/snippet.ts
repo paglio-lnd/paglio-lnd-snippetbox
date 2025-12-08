@@ -1,5 +1,6 @@
 import api from "$shared/api/base";
-import { type Options } from "ky";
+import { isHTTPError, type Options } from "ky";
+import { error } from "@sveltejs/kit";
 import { snippetsValidator, snippetValidator, type Snippet } from "../model/snippet";
 import { printError } from "$shared/lib/errors";
 
@@ -23,9 +24,12 @@ async function getSnippet(id: number, opts?: Options): Promise<Snippet> {
 		const validatedResponse = snippetValidator(response);
 
 		return validatedResponse;
-	} catch (error) {
-		// TODO: If error is due to 404, should re-throw error, so that SvelteKit can render a 404 page; e.g., when trying to get `snippets/4`
-		console.error(printError(error));
+	} catch (err) {
+		if (isHTTPError(err)) {
+			console.error(printError(err));
+			error(err.response.status, err.response.statusText);
+		}
+		console.error(printError(err));
 		return {
 			id: -9999,
 			title: "Something went wrong",
