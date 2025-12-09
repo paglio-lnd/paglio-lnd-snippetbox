@@ -8,9 +8,9 @@ const SnippetSchema = v.object({
 	title: v.string(),
 });
 
-export type Snippet = v.InferOutput<typeof SnippetSchema>;
+type Snippet = v.InferOutput<typeof SnippetSchema>;
 
-export function snippetValidator(input: unknown): Snippet {
+function snippetValidator(input: unknown): Snippet {
 	try {
 		const parsedInput = v.parse(SnippetSchema, input);
 		return parsedInput;
@@ -19,7 +19,7 @@ export function snippetValidator(input: unknown): Snippet {
 	}
 }
 
-export function snippetsValidator(input: unknown): Snippet[] {
+function snippetsValidator(input: unknown): Snippet[] {
 	try {
 		const parsedInput = v.parse(v.array(SnippetSchema), input);
 		return parsedInput;
@@ -27,3 +27,5 @@ export function snippetsValidator(input: unknown): Snippet[] {
 		throw new Error("Failed to validate input", { cause: error });
 	}
 }
+
+export { type Snippet, snippetValidator, snippetsValidator };
