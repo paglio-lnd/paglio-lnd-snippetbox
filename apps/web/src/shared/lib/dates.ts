@@ -1,4 +1,4 @@
-export default function formatDate(
+function formatDate(
 	date: string | Date | undefined,
 	options: {
 		dateStyle: Intl.DateTimeFormatOptions["dateStyle"];
@@ -22,3 +22,5 @@ export default function formatDate(
 
 	return formatter.format(date);
 }
+
+export { formatDate };
