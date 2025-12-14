@@ -13,6 +13,7 @@ declare global {
 declare module "svelte/elements" {
 	export interface HTMLAttributes<T> {
 		[key: `psb-${string}`]: string;
+		[key: `config-${string}`]: string;
 	}
 }
 

@@ -24,7 +24,6 @@
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
-{@render children?.()}
-<main class="wrapper" psb-wrapper-max-width="wide">
+<main class="wrapper" config-wrapper="wide">
 	{@render children?.()}
 </main>

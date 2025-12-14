@@ -4,15 +4,15 @@
 		inline-size: min(var(--_maxWidth), 100% - calc(2rem + var(--spacing-s-m)));
 		margin-inline: auto;
 
-		&[psb-wrapper-max-width="wide"] {
+		&[config-wrapper="wide"] {
 			--_maxWidth: 1240px;
 		}
 
-		&[psb-wrapper-max-width="narrow"] {
+		&[config-wrapper="narrow"] {
 			--_maxWidth: 1028px;
 		}
 
-		&[psb-wrapper-max-width="prose"] {
+		&[config-wrapper="prose"] {
 			--_maxWidth: 65ch;
 		}
 	}
