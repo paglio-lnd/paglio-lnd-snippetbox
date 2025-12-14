@@ -1,7 +1,7 @@
 <script lang="ts">
 	import "../styles/app.css";
 	import "virtual:uno.css";
-	import favicon from "$lib/assets/favicon.svg";
+	import favicon from "$shared/assets/favicon.svg";
 	import { onNavigate } from "$app/navigation";
 
 	let { children } = $props();
