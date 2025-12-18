@@ -3,5 +3,5 @@ minimumReleaseAge: 1440
 trustPolicy: no-downgrade
 strictDepBuilds: true
 
-ignoredBuiltDependencies:
-  - esbuild
+allowBuilds:
+  esbuild: false
